@@ -17,7 +17,9 @@ var queryStringParam = /^\?(.*)/,
     fragmentStrip = /^([^\?]*)/,
     hasQueryString = /(\?)[\w-]+=/i,
     namesPattern = /[\:\*]([^\:\?\/]+)/g;
-Backbone.Router.arrayValueSplit = '|';
+if (typeof Backbone !== 'undefined' && Backbone && Backbone.Router) {
+    Backbone.Router.arrayValueSplit = '|';
+}
 
 var _getFragment = Backbone.History.prototype.getFragment;
 
