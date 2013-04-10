@@ -27,7 +27,7 @@ _.extend(Backbone.History.prototype, {
     if (excludeQueryString) {
       fragment = fragment.replace(queryStrip, '');
     } else if (! hasQueryString.test(fragment)) {
-      fragment += this.location.search;
+      fragment += window.location.search;
     }
     return fragment;
   },
